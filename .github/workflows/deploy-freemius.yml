@@ -1,0 +1,227 @@
+name: Build & Deploy BundlePilot
+
+# Triggers:
+#   - Manual dispatch from the Actions tab (lets you pick version + release mode).
+#   - Tag push matching `v*` (e.g. `v1.0.1`) — auto-deploys as a "pending" release
+#     so it lands in Freemius for review without going live to customers.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g. 1.0.0)'
+        required: true
+      release_mode:
+        description: 'Freemius release mode'
+        required: true
+        default: 'pending'
+        type: choice
+        options:
+          - pending
+          - beta
+          - released
+      skip_freemius_deploy:
+        description: 'Build ZIPs only — skip Freemius API upload'
+        type: boolean
+        default: false
+
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-deploy:
+    name: Build ZIPs & Deploy to Freemius
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      # ------------------------------------------------------------------
+      # Resolve version + release mode from either the manual inputs or
+      # the pushed tag name. Tag pushes default to a "pending" release
+      # so nothing rolls out to customers without an explicit click.
+      # ------------------------------------------------------------------
+      - name: Determine version and release mode
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+            echo "release_mode=${{ github.event.inputs.release_mode }}" >> $GITHUB_OUTPUT
+          else
+            VERSION=${GITHUB_REF#refs/tags/v}
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "release_mode=pending" >> $GITHUB_OUTPUT
+          fi
+
+      # ------------------------------------------------------------------
+      # Build #1 — Freemius ZIP
+      # Used by both addoneplugins.com (paid distribution) AND wp.org
+      # (Freemius's own deploy pipeline auto-strips premium-only blocks
+      # and ships the free build to wp.org).
+      # ------------------------------------------------------------------
+      - name: Build Freemius ZIP (WP.org + addoneplugins.com)
+        run: |
+          mkdir -p dist-freemius/bundlepilot
+
+          rsync -a \
+            --exclude='.git*' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='dist*' \
+            --exclude='*.zip' \
+            --exclude='make-pot.php' \
+            --exclude='README.md' \
+            --exclude='BUILD.md' \
+            ./ dist-freemius/bundlepilot/
+
+          cd dist-freemius && zip -rq ../bundlepilot.zip bundlepilot/
+          cd ..
+          echo "Freemius ZIP: $(du -h bundlepilot.zip | cut -f1)"
+
+      # ------------------------------------------------------------------
+      # Build #2 — WooCommerce Marketplace ZIP
+      # Same source minus the `freemius/` SDK directory, with the
+      # AOP_BB_LICENSE_MODE constant flipped from 'freemius' to 'unlocked'.
+      # In unlocked mode, AOP_BB_License_Manager treats every plan-gate
+      # as `true` — all features available because WC handles licensing
+      # via the WooCommerce.com Helper instead of Freemius.
+      # ------------------------------------------------------------------
+      - name: Build WooCommerce Marketplace ZIP (Freemius stripped)
+        run: |
+          mkdir -p dist-wc/bundlepilot
+
+          rsync -a \
+            --exclude='.git*' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='dist*' \
+            --exclude='*.zip' \
+            --exclude='make-pot.php' \
+            --exclude='README.md' \
+            --exclude='BUILD.md' \
+            --exclude='freemius' \
+            ./ dist-wc/bundlepilot/
+
+          # Switch licensing mode so LicenseManager unlocks every feature
+          # (the WC Marketplace build relies on WC.com Helper, not Freemius).
+          sed -i "s/define( 'AOP_BB_LICENSE_MODE', 'freemius' )/define( 'AOP_BB_LICENSE_MODE', 'unlocked' )/" \
+            dist-wc/bundlepilot/bundlepilot.php
+
+          cd dist-wc && zip -rq ../bundlepilot-pro.zip bundlepilot/
+          cd ..
+          echo "WC Marketplace ZIP: $(du -h bundlepilot-pro.zip | cut -f1)"
+
+      # ------------------------------------------------------------------
+      # Sanity check the WC build before we ship it.
+      # ------------------------------------------------------------------
+      - name: Verify WC build is correctly stripped
+        run: |
+          if [ -d "dist-wc/bundlepilot/freemius" ]; then
+            echo "ERROR: freemius/ directory still present in WC build"
+            exit 1
+          fi
+
+          if ! grep -q "define( 'AOP_BB_LICENSE_MODE', 'unlocked' )" dist-wc/bundlepilot/bundlepilot.php; then
+            echo "ERROR: AOP_BB_LICENSE_MODE was not flipped to 'unlocked'"
+            grep "AOP_BB_LICENSE_MODE" dist-wc/bundlepilot/bundlepilot.php
+            exit 1
+          fi
+
+          echo "WC build OK — no freemius/ directory and license mode is 'unlocked'."
+
+      # ------------------------------------------------------------------
+      # Deploy ONLY the Freemius build to the Freemius API. The WC build
+      # is shipped manually by uploading to the WooCommerce Marketplace
+      # vendor dashboard (one-time submission per release).
+      # ------------------------------------------------------------------
+      - name: Deploy Freemius ZIP to Freemius
+        if: ${{ github.event.inputs.skip_freemius_deploy != 'true' }}
+        run: |
+          PLUGIN_ID="28573"
+          VERSION="${{ steps.version.outputs.version }}"
+          MODE="${{ steps.version.outputs.release_mode }}"
+          ZIP_FILE="${{ github.workspace }}/bundlepilot.zip"
+          TOKEN="${FS_BEARER_TOKEN}"
+
+          echo "=== Freemius Deploy ==="
+          echo "Plugin ID: $PLUGIN_ID"
+          echo "Version:   $VERSION"
+          echo "Mode:      $MODE"
+          echo "ZIP size:  $(du -h $ZIP_FILE | cut -f1)"
+          echo ""
+
+          # Step 1: Check if version already exists on Freemius.
+          echo "Checking existing versions..."
+          TAGS=$(curl -s -H "Authorization: Bearer $TOKEN" \
+            "https://api.freemius.com/v1/products/$PLUGIN_ID/tags.json")
+
+          if echo "$TAGS" | grep -q "\"error\""; then
+            echo "ERROR: API connection failed"
+            echo "$TAGS" | python3 -m json.tool 2>/dev/null || echo "$TAGS"
+            exit 1
+          fi
+
+          if echo "$TAGS" | grep -q "\"$VERSION\""; then
+            echo "Version $VERSION already exists on Freemius. Skipping upload."
+            exit 0
+          fi
+
+          # Step 2: Upload the ZIP as a new tag.
+          echo ""
+          echo "Uploading version $VERSION..."
+          DEPLOY=$(curl -s -X POST \
+            -H "Authorization: Bearer $TOKEN" \
+            -F "add_contributor=false" \
+            -F "file=@$ZIP_FILE" \
+            "https://api.freemius.com/v1/products/$PLUGIN_ID/tags.json")
+
+          if echo "$DEPLOY" | grep -q "\"error\""; then
+            echo "ERROR: Deploy failed"
+            echo "$DEPLOY" | python3 -m json.tool 2>/dev/null || echo "$DEPLOY"
+            exit 1
+          fi
+
+          TAG_ID=$(echo "$DEPLOY" | python3 -c "import sys,json; print(json.load(sys.stdin)['id'])" 2>/dev/null)
+          echo "Deployed! Tag ID: $TAG_ID"
+
+          # Step 3: Promote to beta or released if requested.
+          if [ "$MODE" != "pending" ] && [ -n "$TAG_ID" ]; then
+            echo "Setting release mode to: $MODE..."
+            curl -s -X PUT \
+              -H "Authorization: Bearer $TOKEN" \
+              -H "Content-Type: application/json" \
+              -d "{\"release_mode\":\"$MODE\"}" \
+              "https://api.freemius.com/v1/products/$PLUGIN_ID/tags/$TAG_ID.json"
+            echo ""
+            echo "Release mode set to: $MODE"
+          fi
+
+          echo ""
+          echo "Done — check the Freemius dashboard."
+        env:
+          FS_BEARER_TOKEN: ${{ secrets.FREEMIUS_BEARER_TOKEN }}
+
+      # ------------------------------------------------------------------
+      # Both ZIPs are kept for 30 days as workflow artifacts so you can
+      # download the WC build manually for the WooCommerce Marketplace
+      # submission, and have a backup of the Freemius build.
+      # ------------------------------------------------------------------
+      - name: Upload Freemius ZIP as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundlepilot-freemius-${{ steps.version.outputs.version }}
+          path: bundlepilot.zip
+          retention-days: 30
+
+      - name: Upload WooCommerce Marketplace ZIP as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundlepilot-wc-${{ steps.version.outputs.version }}
+          path: bundlepilot-pro.zip
+          retention-days: 30

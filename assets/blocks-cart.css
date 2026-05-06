@@ -1,0 +1,82 @@
+/**
+ * Bundle Builder — Block Cart/Checkout Styles
+ *
+ * Styles bundle parent-child items within the WooCommerce
+ * Cart and Checkout block components.
+ *
+ * @package AOP_BundleBuilder
+ */
+
+/* Parent bundle row */
+.wc-block-cart-items .aop-bb-block-parent {
+    border-bottom: none;
+}
+
+/* Child bundle row */
+.wc-block-cart-items .aop-bb-block-child {
+    background: #f9fafb;
+    opacity: 0.9;
+}
+
+.wc-block-cart-items .aop-bb-block-child .wc-block-cart-item__image img {
+    max-width: 48px;
+    opacity: 0.8;
+}
+
+/* Bundle badge in item name */
+.aop-bb-block-badge {
+    display: inline-block;
+    background: #FF4D00;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* Child indent arrow */
+.aop-bb-block-child-indent {
+    color: #9ca3af;
+    margin-right: 4px;
+}
+
+/* "Included" label for child prices */
+.aop-bb-block-included {
+    color: #9ca3af;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/* Hide the quantity selector for child items */
+.wc-block-cart-items .aop-bb-block-child .wc-block-components-quantity-selector {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Hide the quantity selector for parent items too */
+.wc-block-cart-items .aop-bb-block-parent .wc-block-components-quantity-selector {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Checkout order summary child items */
+.wc-block-components-order-summary .aop-bb-block-child {
+    padding-left: 24px;
+    background: #f9fafb;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .aop-bb-block-badge {
+        font-size: 9px;
+        padding: 1px 6px;
+    }
+
+    .wc-block-cart-items .aop-bb-block-child .wc-block-cart-item__image {
+        display: none;
+    }
+}

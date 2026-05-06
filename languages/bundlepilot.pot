@@ -1,0 +1,1399 @@
+# BundlePilot — translation template
+# Copyright (C) 2026 Add One Plugins
+# This file is distributed under the same license as the BundlePilot plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: BundlePilot 1.0.0\n"
+"Report-Msgid-Bugs-To: https://addoneplugins.com/contact/\n"
+"POT-Creation-Date: 2026-05-06 08:49+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: bundlepilot\n"
+
+#: includes/Api/class-aop-bb-ajax-cart.php:289
+msgid "\"%s\" is out of stock."
+msgstr ""
+
+#: bundlepilot.php:244
+msgid "%1$s requires %2$s to be installed and activated."
+msgstr ""
+
+#: bundlepilot.php:265
+msgid "%1$s requires WooCommerce %2$s or higher. You are running WooCommerce %3$s."
+msgstr ""
+
+#: includes/Business/class-aop-bb-duplicator.php:184
+msgid "%s (Copy)"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:278
+msgid "+ Add Step"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:248
+msgid "+ Add Tier"
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:545
+msgid "+ Add Webhook"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:247
+msgid "1 column"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:198
+#: includes/Business/class-aop-bb-template-registry.php:352
+msgid "1 step"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:233
+msgid "2 columns"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:248
+msgid "2 columns (default)"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:234
+msgid "3 columns (default)"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:83
+#: includes/Business/class-aop-bb-template-registry.php:162
+#: includes/Business/class-aop-bb-template-registry.php:315
+msgid "3 steps"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:235
+msgid "4 columns"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:119
+#: includes/Business/class-aop-bb-template-registry.php:227
+#: includes/Business/class-aop-bb-template-registry.php:273
+msgid "4 steps"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:217
+msgid "Accent color"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:299
+#: includes/Business/class-aop-bb-template-registry.php:336
+msgid "Accessories"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:152
+#: includes/Product/class-wc-product-bundle-builder.php:220
+msgid "Add Bundle to Cart"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:182
+msgid "Add a Drink"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:103
+msgid "Add a Greeting Card"
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:319
+msgid "Add your products to each step and publish when ready."
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:154
+msgid "Added to Cart!"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:153
+msgid "Adding..."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:212
+msgid "Adjust the look and feel of the step-by-step bundle builder on product pages."
+msgstr ""
+
+#: includes/Business/class-aop-bb-role-visibility.php:147
+msgid "Administrators always have access regardless of selection."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:78
+msgid "Advanced"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:142
+msgid "After adding bundle to cart"
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:627
+msgid "All events"
+msgstr ""
+
+#: includes/Business/class-aop-bb-role-visibility.php:134
+msgid "Allowed roles"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:76
+msgid "Appearance"
+msgstr ""
+
+#: includes/Business/class-aop-bb-role-visibility.php:115
+msgid "Available to"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:227
+msgid "Beauty"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:134
+msgid "Beverages"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:146
+msgid "Bonus Item"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:263
+msgid "Bordered (default)"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:287
+msgid "Bottom"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:330
+msgid "Brewing Equipment"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-single-product.php:148
+#: includes/Product/class-wc-product-bundle-builder.php:210
+msgid "Build Your Bundle"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:80
+#: includes/Business/class-aop-bb-template-registry.php:85
+msgid "Build Your Own Gift Box"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:159
+#: includes/Business/class-aop-bb-template-registry.php:164
+msgid "Build Your Own Meal"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:229
+msgid "Build Your Skincare Routine"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:210
+msgid "Builder Appearance"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:262
+msgid "Builder Steps"
+msgstr ""
+
+#: includes/Blocks/class-aop-bb-block-script-integration.php:61
+#: includes/Cart/class-aop-bb-cart-handler.php:144
+#: includes/Cart/class-aop-bb-cart-handler.php:168
+#: includes/Cart/class-aop-bb-cart-handler.php:190
+#: includes/Order/class-aop-bb-order-display.php:196
+msgid "Bundle"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-cart-handler.php:156
+#: includes/Order/class-aop-bb-order-display.php:277
+msgid "Bundle Discount"
+msgstr ""
+
+#: includes/Order/class-aop-bb-order-display.php:275
+msgid "Bundle Group"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:132
+msgid "Bundle Import / Export"
+msgstr ""
+
+#: includes/Order/class-aop-bb-order-display.php:273
+msgid "Bundle Parent"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:182
+msgid "Bundle Price"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:66
+msgid "Bundle Steps"
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:68
+#: includes/Business/class-aop-bb-templates.php:93
+msgid "Bundle Templates"
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:109
+msgid "Bundle Templates is a Business feature"
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:217
+msgid "Bundle Templates require the Business plan."
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:161
+msgid "Bundle Total"
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:491
+msgid "Bundle Webhooks"
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:630
+msgid "Bundle added to cart"
+msgstr ""
+
+#: includes/Api/class-aop-bb-ajax-cart.php:215
+msgid "Bundle added to cart."
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:318
+msgid "Bundle created from template."
+msgstr ""
+
+#: includes/Blocks/class-aop-bb-blocks-integration.php:148
+msgid "Bundle discount amount."
+msgstr ""
+
+#: includes/Business/class-aop-bb-duplicator.php:302
+msgid "Bundle duplicated."
+msgstr ""
+
+#: includes/Business/class-aop-bb-duplicator.php:148
+msgid "Bundle duplication requires the Business plan."
+msgstr ""
+
+#: includes/Blocks/class-aop-bb-blocks-integration.php:130
+msgid "Bundle group identifier."
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:272
+#: includes/Business/class-aop-bb-import-export.php:398
+msgid "Bundle import/export requires the Business plan."
+msgstr ""
+
+#: includes/Api/class-aop-bb-rest-controller.php:157
+#: includes/Api/class-aop-bb-rest-controller.php:258
+#: includes/Business/class-aop-bb-duplicator.php:136
+msgid "Bundle not found."
+msgstr ""
+
+#: includes/Blocks/class-aop-bb-blocks-integration.php:154
+msgid "Bundle pricing mode."
+msgstr ""
+
+#: includes/Api/class-aop-bb-ajax-cart.php:73
+msgid "Bundle product not found."
+msgstr ""
+
+#: bundlepilot.php:245
+#: bundlepilot.php:266
+#: includes/Admin/class-aop-bb-admin-page.php:340
+#: includes/Admin/class-aop-bb-admin-page.php:402
+msgid "BundlePilot"
+msgstr ""
+
+#: includes/Product/class-aop-bb-product-type.php:61
+msgid "BundlePilot Bundle"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:339
+#: includes/Admin/class-aop-bb-admin-page.php:416
+msgid "BundlePilot Settings"
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:417
+msgid "BundlePilot Webhooks"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:796
+#: includes/Product/class-aop-bb-product-type.php:254
+msgid "BundlePilot:"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:188
+#: includes/Cart/class-aop-bb-cart-handler.php:307
+#: includes/Cart/class-aop-bb-cart-handler.php:334
+msgid "Bundled"
+msgstr ""
+
+#: includes/Order/class-aop-bb-order-display.php:274
+msgid "Bundled Item"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-cart-handler.php:167
+msgid "Bundled in"
+msgstr ""
+
+#: includes/Order/class-aop-bb-order-display.php:234
+msgid "Bundled in: %s"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:181
+msgid "Bundled item price label"
+msgstr ""
+
+#: includes/Order/class-aop-bb-order-display.php:111
+#: includes/Order/class-aop-bb-order-display.php:117
+#: includes/Order/class-aop-bb-order-display.php:213
+msgid "Bundled items:"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:200
+msgid "Buy More & Save"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:195
+msgid "Buy More, Save More"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:389
+msgid "By Category"
+msgstr ""
+
+#: includes/Blocks/class-aop-bb-blocks-integration.php:142
+msgid "Calculated bundle total price."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:257
+msgid "Card style"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:135
+msgid "Cart Behaviour"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:158
+msgid "Cart Display"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:407
+msgid "Categories"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:156
+msgid "Checkout"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:170
+msgid "Choose Your Protein"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:365
+msgid "Choose Your Starter Items"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:91
+msgid "Choose a Box"
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:103
+msgid "Choose a starting template to skip the blank-slate setup. Each template creates a draft bundle with steps and pricing pre-configured — you just need to add your products."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:133
+msgid "Choose how the bundle price is calculated for customers."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:239
+msgid "Cleanser"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:324
+msgid "Coffee Beans"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:313
+msgid "Coffee-themed gift bundle: beans, equipment, accessories. Fixed price."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:275
+msgid "Complete Outfit Builder"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:225
+msgid "Complete routine builder: cleanser, treatment, moisturizer, SPF. Tiered pricing."
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:508
+msgid "Connect bundles to anything"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:170
+msgid "Connection error. Please check your internet."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:363
+msgid "Control how bundles are shown in order details and customer emails."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:401
+msgid "Control what happens to plugin data when the plugin is uninstalled."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:137
+msgid "Control what happens when a customer adds a bundle to their cart."
+msgstr ""
+
+#: includes/Api/class-aop-bb-ajax-cart.php:124
+msgid "Could not add bundle to cart. Please try again."
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:428
+msgid "Could not read the uploaded file."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:117
+msgid "Curated monthly box at a fixed price. Customer picks the items, you set the value."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:160
+msgid "Customize how bundles appear in the cart and checkout."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:119
+msgid "DTC"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:399
+msgid "Data Management"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:202
+msgid "Define quantity thresholds and the percentage discount applied when met. Based on total items across all steps."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:265
+msgid "Define the steps customers follow to build their bundle. Each step presents a selection of products."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:407
+msgid "Delete all BundlePilot settings and product meta when the plugin is uninstalled. Bundle product types will revert to simple products."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:210
+msgid "Discount (%)"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:200
+msgid "Discount Tiers"
+msgstr ""
+
+#: includes/Order/class-aop-bb-order-display.php:207
+msgid "Discount: %s"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:319
+msgid "Display a \"You save X\" badge in the price summary when a discount applies."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:311
+msgid "Display the \"X / Y items selected\" counter in each step header."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:295
+msgid "Display the price below each product in the builder. Disable to hide individual prices (useful for fixed-price bundles)."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:287
+msgid "Display the short description below each product name in the builder steps."
+msgstr ""
+
+#: bundlepilot.php:290
+msgid "Documentation"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:200
+msgid "Download Selected as JSON"
+msgstr ""
+
+#: includes/Business/class-aop-bb-duplicator.php:102
+msgid "Duplicate Bundle"
+msgstr ""
+
+#: includes/Business/class-aop-bb-duplicator.php:101
+msgid "Duplicate this bundle"
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:562
+msgid "Each request includes %s = \"sha256=<hex>\" computed as HMAC-SHA256 of the body. Validate this on your receiver to confirm the request is from this site."
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:642
+msgid "Enabled"
+msgstr ""
+
+#: includes/Business/class-aop-bb-role-visibility.php:121
+msgid "Everyone"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:164
+msgid "Export Bundles"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:147
+msgid "Export your bundle configurations as JSON and re-import them on any WooCommerce store. Available on the Business plan."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:273
+msgid "Fashion"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:271
+msgid "Fashion bundle: top, bottom, shoes, accessories. Sum-of-items pricing."
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:416
+msgid "File too large. Maximum size is 2 MB."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:152
+msgid "Fixed Price — One set price for the entire bundle"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:119
+#: includes/Business/class-aop-bb-template-registry.php:315
+msgid "Fixed price"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:162
+msgid "Food"
+msgstr ""
+
+#: includes/Product/class-aop-bb-product-type.php:218
+msgid "Free plan is limited to %d bundles. This product was saved as a Simple product instead. Upgrade to Pro for unlimited bundles."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:626
+msgid "Free plan is limited to %d steps per bundle. Extra steps were not saved. Upgrade to Pro for unlimited steps."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:853
+msgid "Free plan is limited to %d steps per bundle. Upgrade to Pro for unlimited steps."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:75
+msgid "General"
+msgstr ""
+
+#: bundlepilot.php:291
+msgid "Get support"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:83
+#: includes/Business/class-aop-bb-template-registry.php:315
+msgid "Gift"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:396
+msgid "Hand-Picked Products"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:398
+msgid "Hand-Picked Products (PRO)"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:717
+msgid "Hand-picked product steps require the Pro plan. Affected steps were reverted to category-based selection."
+msgstr ""
+
+#: includes/Business/class-aop-bb-white-label.php:114
+msgid "Hide BundlePilot Branding"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:165
+msgid "Hide bundled items in cart"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:376
+msgid "Hide child line items in emails"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:377
+msgid "Hide individual bundled item rows in order emails. The parent bundle row with its summary will still be shown."
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:108
+msgid "Import / Export"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:107
+msgid "Import / Export Bundles"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:221
+#: includes/Business/class-aop-bb-import-export.php:240
+msgid "Import Bundles"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:474
+msgid "Imported Bundle"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:369
+msgid "Include the list of bundled items below the parent item in customer order confirmation emails."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:187
+#: includes/Blocks/class-aop-bb-block-script-integration.php:62
+#: includes/Cart/class-aop-bb-cart-handler.php:306
+#: includes/Cart/class-aop-bb-cart-handler.php:333
+msgid "Included"
+msgstr ""
+
+#: includes/Business/class-aop-bb-duplicator.php:130
+msgid "Invalid bundle ID."
+msgstr ""
+
+#: includes/Api/class-aop-bb-ajax-cart.php:64
+msgid "Invalid bundle data. Please try again."
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:408
+msgid "Invalid upload."
+msgstr ""
+
+#: includes/Cart/class-aop-bb-single-product.php:63
+msgid "JavaScript is required to use BundlePilot. Please enable JavaScript in your browser."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:326
+msgid "Lazy-load product images"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:327
+msgid "Load product images only when the step is visible. Recommended for bundles with many products."
+msgstr ""
+
+#: includes/Cart/class-aop-bb-single-product.php:68
+msgid "Loading bundle builder..."
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:168
+msgid "Loading bundle..."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:461
+msgid "Locked to 1 on Free plan — each step requires exactly one selection."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:464
+msgid "Locked to 1 on Free plan — multi-select per step requires Pro."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:218
+msgid "Main color used for buttons, progress bar, selected state borders, and checkmarks."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:489
+msgid "Max Items"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:160
+msgid "Maximum %d allowed"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:243
+msgid "Maximum file size: 2 MB"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:463
+msgid "Maximum items a customer can select. Set to 1 for single-choice steps."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:209
+#: includes/Admin/class-aop-bb-product-data.php:470
+msgid "Min Items"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:473
+#: includes/Admin/class-aop-bb-product-data.php:492
+msgid "Min/Max Quantity Rules require Pro"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:721
+msgid "Min/Max quantity rules require the Pro plan. Affected steps were reset to 1 item per step (single-choice)."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:265
+msgid "Minimal"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:159
+msgid "Minimum %d required"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:460
+msgid "Minimum items a customer must select. Use 0 to make this step optional."
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:207
+msgid "Missing template identifier."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:241
+msgid "Mobile grid columns"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:251
+msgid "Moisturizer"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:121
+msgid "Monthly Subscription Box"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:144
+msgid "Move bundles between sites in seconds"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:349
+msgid "New Customer Welcome Pack"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:163
+msgid "Next"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:175
+msgid "No bundles found in this store yet."
+msgstr ""
+
+#: includes/Pricing/class-aop-bb-price-calculator.php:99
+msgid "No items selected."
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:284
+msgid "No valid bundles found to export."
+msgstr ""
+
+#: includes/Api/class-aop-bb-ajax-cart.php:304
+msgid "Not enough stock for \"%1$s\". Only %2$d available."
+msgstr ""
+
+#: includes/Blocks/class-aop-bb-blocks-integration.php:160
+msgid "Number of items in the bundle."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:228
+msgid "Number of product columns in each bundle step on desktop."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:242
+msgid "Number of product columns on small screens (below 480px)."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:279
+msgid "Numbered circles"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:352
+msgid "Onboarding"
+msgstr ""
+
+#: includes/Business/class-aop-bb-duplicator.php:143
+msgid "Only BundlePilot bundles can be duplicated with this tool."
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:422
+msgid "Only JSON files are accepted."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:729
+msgid "Optional steps (Min items = 0) require the Pro plan. Min items was raised to 1 on affected steps."
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:633
+msgid "Order completed"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:77
+#: includes/Admin/class-aop-bb-settings-page.php:361
+msgid "Orders & Emails"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:157
+msgid "Out of stock"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:270
+msgid "Outfit Builder"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-cart-handler.php:147
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Business/class-aop-bb-import-export.php:453
+msgid "Imported %1$d bundle. (%2$d skipped due to errors.)"
+msgid_plural "Imported %1$d bundles. (%2$d skipped due to errors.)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: make-pot.php:68
+msgid "one"
+msgid_plural "many"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Blocks/class-aop-bb-blocks-integration.php:136
+msgid "Parent bundle product ID."
+msgstr ""
+
+#: includes/Blocks/class-aop-bb-blocks-integration.php:166
+msgid "Parent cart item key."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:189
+#: includes/Cart/class-aop-bb-cart-handler.php:308
+#: includes/Cart/class-aop-bb-cart-handler.php:335
+msgid "Part of bundle"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:176
+msgid "Pick 2 Sides"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:211
+msgid "Pick Your Items"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:402
+msgid "Please choose a file to upload."
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:278
+msgid "Please select at least one bundle to export."
+msgstr ""
+
+#: includes/Api/class-aop-bb-ajax-cart.php:366
+msgid "Please select at least one product for your bundle."
+msgstr ""
+
+#: includes/Business/class-aop-bb-white-label.php:68
+msgid "Powered by"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:164
+msgid "Previous"
+msgstr ""
+
+#: includes/Pricing/class-aop-bb-price-calculator.php:158
+msgid "Price calculated successfully."
+msgstr ""
+
+#: includes/Api/class-aop-bb-ajax-cart.php:94
+msgid "Price calculation failed."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:130
+msgid "Pricing Configuration"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:145
+#: includes/Order/class-aop-bb-order-display.php:276
+msgid "Pricing Mode"
+msgstr ""
+
+#: includes/Api/class-aop-bb-ajax-cart.php:277
+msgid "Product #%d is not available for purchase."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:386
+msgid "Product Source"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:227
+msgid "Product grid columns"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:423
+msgid "Products"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:280
+msgid "Progress bar"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:272
+msgid "Progress indicator style"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:149
+msgid "Redirect to cart page"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:150
+msgid "Redirect to checkout page"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:406
+msgid "Remove data on uninstall"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:361
+msgid "Remove step"
+msgstr ""
+
+#: includes/Business/class-aop-bb-white-label.php:115
+msgid "Remove the \"Powered by BundlePilot\" footer from the wizard."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:1222
+msgid "Remove this step?"
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:645
+msgid "Remove webhook"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:160
+msgid "Restaurant-style meal builder: protein, sides, drink. Sum-of-items pricing."
+msgstr ""
+
+#: includes/Business/class-aop-bb-role-visibility.php:128
+msgid "Restrict who can see and purchase this bundle."
+msgstr ""
+
+#: includes/Business/class-aop-bb-duplicator.php:303
+msgid "Review the configuration below and publish when ready."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:437
+msgid "Save Changes"
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:571
+msgid "Save Webhooks"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:428
+msgid "Search for products"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:97
+msgid "Select Your Gifts"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:182
+msgid "Select all"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:411
+msgid "Select categories"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:158
+msgid "Select items"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:166
+msgid "Select the bundles to export. The download will be a portable JSON file."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:140
+msgid "Self-Care"
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:501
+msgid "Send bundle events to external services (Zapier, Make, custom endpoints). Each request is signed with HMAC-SHA256 for receiver validation."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:425
+msgid "Settings saved."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:264
+msgid "Shadow"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:122
+msgid "Shadow and Minimal card styles require the Pro plan. Card style was reset to Bordered."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:293
+msgid "Shoes"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:173
+msgid "Show \"Included\" price label"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:174
+msgid "Show an \"Included\" label instead of $0.00 for bundled child items in the cart."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:303
+msgid "Show an \"Out of stock\" overlay badge on unavailable products."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:368
+msgid "Show bundled items in order emails"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:294
+msgid "Show individual product prices"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:302
+msgid "Show out-of-stock badges"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:286
+msgid "Show product descriptions"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:318
+msgid "Show savings badge"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:310
+msgid "Show step item counter"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:148
+msgid "Show success message on product page"
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:552
+msgid "Signing Secret"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:196
+msgid "Single-step bundle with quantity-based discount tiers. Drives larger basket sizes."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:350
+msgid "Single-step starter bundle for first-time buyers. Quantity tiers reward larger first orders."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:224
+msgid "Skincare Routine Kit"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:128
+msgid "Snacks"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:169
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: includes/Business/class-aop-bb-role-visibility.php:124
+msgid "Specific user roles only"
+msgstr ""
+
+#: includes/Api/class-aop-bb-ajax-cart.php:344
+#: includes/Api/class-aop-bb-ajax-cart.php:356
+#: includes/Cart/class-aop-bb-frontend-assets.php:165
+msgid "Step"
+msgstr ""
+
+#: includes/Api/class-aop-bb-ajax-cart.php:355
+msgid "Step \"%1$s\" allows at most %2$d item(s)."
+msgstr ""
+
+#: includes/Api/class-aop-bb-ajax-cart.php:343
+msgid "Step \"%1$s\" requires at least %2$d item(s)."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:355
+msgid "Step %s"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:371
+msgid "Step Title"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:856
+msgid "Step limit reached"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:278
+msgid "Step pills (default)"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:273
+msgid "Style of the step progress indicator at the top of the builder."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:116
+msgid "Subscription Box Builder"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:149
+msgid "Sum of Items — Total of selected product prices"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:83
+#: includes/Business/class-aop-bb-template-registry.php:162
+#: includes/Business/class-aop-bb-template-registry.php:273
+msgid "Sum pricing"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:257
+msgid "Sunscreen"
+msgstr ""
+
+#: bundlepilot.php:291
+msgid "Support"
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:213
+msgid "Template not found."
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:69
+msgid "Templates"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:182
+msgid "Text shown in place of the price for bundled items. Only used when the \"Included\" label is enabled above."
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:434
+msgid "The file is not a valid BundlePilot export."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:187
+msgid "The fixed price customers pay for this bundle, regardless of which items they choose."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:81
+msgid "Three-step gift bundle: pick the box, choose the gift, add a card. Sum-of-items pricing."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:198
+#: includes/Business/class-aop-bb-template-registry.php:227
+#: includes/Business/class-aop-bb-template-registry.php:352
+msgid "Tiered"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:569
+msgid "Tiered Discount pricing requires the Pro plan. Pricing mode reset to \"Sum of Items\"."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:159
+msgid "Tiered Discounts — Discount increases with quantity"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:161
+msgid "Tiered Discounts — Discount increases with quantity (PRO)"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:364
+msgid "Toggle"
+msgstr ""
+
+#: includes/Compat/class-aop-bb-security.php:73
+#: includes/Compat/class-aop-bb-security.php:111
+msgid "Too many requests. Please wait a moment and try again."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:281
+msgid "Top"
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:245
+msgid "Treatment"
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:183
+msgid "Unlock with Business"
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:255
+msgid "Untitled Bundle"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:799
+msgid "Upgrade now"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:310
+#: includes/Business/class-aop-bb-import-export.php:152
+#: includes/Business/class-aop-bb-templates.php:117
+#: includes/Business/class-aop-bb-webhooks.php:516
+msgid "Upgrade to Business"
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:112
+msgid "Upgrade to Business to create bundles from any of these pre-built templates with one click. You can preview the structure below."
+msgstr ""
+
+#: includes/Business/class-aop-bb-white-label.php:119
+msgid "Upgrade to Business to unlock"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:166
+msgid "Upgrade to Business to unlock more options"
+msgstr ""
+
+#: includes/Business/class-aop-bb-role-visibility.php:156
+msgid "Upgrade to Business to unlock role-based visibility"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:311
+#: includes/Admin/class-aop-bb-product-data.php:857
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: includes/Product/class-aop-bb-product-type.php:262
+msgid "Upgrade to Pro for unlimited bundles"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:512
+msgid "Upgrade to Pro to unlock Min/Max quantity rules and optional steps"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:167
+msgid "Upgrade to Pro to unlock more options"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:170
+msgid "Upgrade to Pro to unlock tiered volume discounts"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:232
+msgid "Upgrade to unlock"
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:223
+msgid "Upload a JSON file exported from BundlePilot. Each bundle is imported as a draft so you can review before publishing."
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:412
+msgid "Upload failed. Please try again."
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:177
+msgid "Use This Template"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:155
+msgid "View Cart"
+msgstr ""
+
+#: bundlepilot.php:290
+msgid "View documentation"
+msgstr ""
+
+#: includes/Business/class-aop-bb-role-visibility.php:105
+msgid "Visibility"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:258
+msgid "Visual style of the product cards in the builder."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:198
+msgid "Volume discount"
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:418
+msgid "Webhooks"
+msgstr ""
+
+#: includes/Business/class-aop-bb-webhooks.php:511
+msgid "Webhooks let you push bundle events into Zapier, Make, your CRM, your analytics, or any custom integration. Available on the Business plan."
+msgstr ""
+
+#: includes/Business/class-aop-bb-template-registry.php:354
+msgid "Welcome Starter Pack"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:143
+msgid "What happens after a customer adds a bundle to their cart."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-settings-page.php:166
+msgid "When enabled, only the parent bundle row is visible in the cart. Bundled items are hidden but still processed for stock."
+msgstr ""
+
+#: includes/Blocks/class-aop-bb-blocks-integration.php:118
+msgid "Whether this is a bundle parent item."
+msgstr ""
+
+#: includes/Blocks/class-aop-bb-blocks-integration.php:124
+msgid "Whether this is a bundled child item."
+msgstr ""
+
+#: includes/Business/class-aop-bb-white-label.php:107
+msgid "White Label"
+msgstr ""
+
+#: bundlepilot.php:246
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:403
+msgid "WooCommerce is required to render BundlePilot settings."
+msgstr ""
+
+#: includes/Business/class-aop-bb-templates.php:199
+msgid "You do not have permission to create bundles."
+msgstr ""
+
+#: includes/Business/class-aop-bb-duplicator.php:118
+msgid "You do not have permission to duplicate bundles."
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:266
+msgid "You do not have permission to export bundles."
+msgstr ""
+
+#: includes/Business/class-aop-bb-import-export.php:392
+msgid "You do not have permission to import bundles."
+msgstr ""
+
+#: includes/Admin/class-aop-bb-admin-page.php:398
+#: includes/Business/class-aop-bb-import-export.php:123
+#: includes/Business/class-aop-bb-templates.php:84
+#: includes/Business/class-aop-bb-webhooks.php:481
+msgid "You do not have permission to view this page."
+msgstr ""
+
+#: includes/Product/class-aop-bb-product-type.php:257
+msgid "You have created %1$d of %2$d bundles allowed on the Free plan."
+msgstr ""
+
+#: includes/Blocks/class-aop-bb-block-script-integration.php:64
+#: includes/Cart/class-aop-bb-frontend-assets.php:162
+msgid "You save"
+msgstr ""
+
+#: includes/Admin/class-aop-bb-product-data.php:376
+msgid "e.g., Choose a Base"
+msgstr ""
+
+#: make-pot.php:57
+msgid "foo"
+msgstr ""
+
+#: includes/Blocks/class-aop-bb-block-script-integration.php:63
+msgid "items"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:166
+msgid "of"
+msgstr ""
+
+#: includes/Order/class-aop-bb-order-display.php:200
+msgid "pricing"
+msgstr ""
+
+#: includes/Cart/class-aop-bb-frontend-assets.php:167
+msgid "selected"
+msgstr ""
+

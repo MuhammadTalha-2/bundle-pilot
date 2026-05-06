@@ -1,0 +1,26 @@
+# Build artifacts
+dist/
+dist-*/
+*.zip
+
+# Dependencies
+node_modules/
+vendor/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.bak
+
+# WP-CLI / local dev
+wp-cli.local.yml
+
+# Logs
+*.log
+debug.log
+
+# Temporary make-pot output that shouldn't ship
+languages/*.mo

@@ -1,0 +1,33 @@
+*** BundlePilot — Step-by-Step Product Bundle Wizard for WooCommerce — Changelog ***
+
+2026-02-25 - version 1.0.0
+* New - Initial release.
+* New - Custom "BundlePilot Bundle" WooCommerce product type.
+* New - Admin product data panel with step configuration UI.
+* New - Three pricing modes: fixed, sum of items, tiered discounts.
+* New - Sortable step builder with category/product source selection.
+* New - Settings page with General, Appearance, and License tabs.
+* New - License SDK integration for license key management.
+* New - REST API: GET /bundle/{id}/steps, POST /bundle/{id}/stock, POST /bundle/{id}/price.
+* New - AJAX add-to-cart handler with full server-side validation.
+* New - Price calculator engine with tiered discount resolution.
+* New - Parent-child cart structure for proper stock deduction.
+* New - Cart display with bundle badges, child indentation, locked quantities.
+* New - Removal/restore sync: removing parent removes all children.
+* New - Order line item metadata for bundle context.
+* New - Step-by-step wizard UI built with React and @wordpress/scripts.
+* New - Product selection cards with quantity controls.
+* New - Live price preview with tiered discount "next tier" hints.
+* New - Real-time stock checking via REST polling (30-second interval).
+* New - Cart success screen with View Cart, Checkout, and Build Another CTAs.
+* New - Mobile-first responsive design with sticky price summary.
+* New - Progress bar with step completion indicators.
+* New - WooCommerce Blocks Cart/Checkout integration via Store API extension.
+* New - Checkout Filters API integration for block-based cart display.
+* New - Order admin display with bundle badges, child summaries, pricing breakdown.
+* New - Hidden internal meta keys with formatted display for visible meta.
+* New - Theme compatibility layer (Storefront, Astra, GeneratePress, Kadence, OceanWP, block themes).
+* New - Security hardening with rate limiting for AJAX and REST endpoints.
+* New - Input sanitization enforcement on REST request bodies.
+* New - HPOS compatibility declared and verified.
+* New - Cart and Checkout Blocks compatibility declared.
