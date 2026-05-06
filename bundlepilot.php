@@ -123,36 +123,81 @@ if ( 'freemius' === AOP_BB_LICENSE_MODE && file_exists( AOP_BB_PLUGIN_PATH . 'fr
 
         // Signal that SDK was initiated.
         do_action( 'bbfw_fs_loaded' );
-
-        // Register cleanup with Freemius's uninstall hook.
-        // This fires regardless of how the plugin is removed (admin or Freemius UI).
-        bbfw_fs()->add_action( 'after_uninstall', 'aop_bb_freemius_cleanup' );
-
-        /**
-         * Cleanup callback fired by Freemius after uninstall.
-         *
-         * Respects the user's "Delete data on uninstall" setting from
-         * the Advanced settings tab. If they haven't opted in, we leave
-         * everything alone so reinstalling preserves their configuration.
-         *
-         * @return void
-         */
-        function aop_bb_freemius_cleanup(): void {
-
-            $delete_data = get_option( 'aop_bb_delete_data_on_uninstall', 'no' );
-
-            if ( 'yes' !== $delete_data ) {
-                return;
-            }
-
-            // Reuse the same cleanup pass as uninstall.php to keep one source of truth.
-            // We need to define the WP_UNINSTALL_PLUGIN constant so uninstall.php proceeds.
-            if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-                define( 'WP_UNINSTALL_PLUGIN', AOP_BB_PLUGIN_FILE );
-            }
-            require_once AOP_BB_PLUGIN_PATH . 'uninstall.php';
-        }
     }
+}
+
+/* =========================================================================
+ * Plugin Uninstall Cleanup
+ *
+ * Freemius rejects plugins that ship a separate `uninstall.php` because
+ * WordPress fires only ONE uninstall mechanism (file OR hook), and the
+ * file always wins — meaning Freemius's `after_uninstall` callback (and
+ * its uninstall feedback collection) would never run.
+ *
+ * Solution: define one cleanup function at top level, then register it
+ * via either:
+ *   - Freemius's `after_uninstall` hook (when SDK is loaded), or
+ *   - WordPress's native register_uninstall_hook (otherwise).
+ *
+ * The cleanup is opt-in (controlled by the "Delete data on uninstall"
+ * setting in BundlePilot Settings → Advanced) and idempotent.
+ * ========================================================================= */
+
+/**
+ * Plugin uninstall cleanup.
+ *
+ * Removes all BundlePilot data ONLY if the user has opted in via the
+ * "Delete data on uninstall" setting. Default behaviour is to leave
+ * everything alone so reinstalls preserve configuration.
+ *
+ * Safe to call multiple times — every operation is idempotent.
+ *
+ * @return void
+ */
+function bundlepilot_perform_uninstall_cleanup(): void {
+
+    if ( 'yes' !== get_option( 'aop_bb_delete_data_on_uninstall', 'no' ) ) {
+        return;
+    }
+
+    global $wpdb;
+
+    // phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery
+    // phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching
+    // phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+
+    // 1. Delete all `aop_bb_*` options.
+    $wpdb->query( "DELETE FROM {$wpdb->options} WHERE option_name LIKE 'aop_bb_%'" );
+
+    // 2. Delete BundlePilot transients.
+    $wpdb->query(
+        "DELETE FROM {$wpdb->options}
+         WHERE option_name LIKE '_transient_aop_bb_%'
+            OR option_name LIKE '_transient_timeout_aop_bb_%'"
+    );
+
+    // 3. Delete all `_aop_bb_*` post meta.
+    $wpdb->query( "DELETE FROM {$wpdb->postmeta} WHERE meta_key LIKE '_aop_bb_%'" );
+
+    // phpcs:enable
+
+    // 4. Clear object cache so deleted options/meta don't linger.
+    wp_cache_flush();
+}
+
+/**
+ * Wire the cleanup function to whichever uninstall mechanism is active.
+ *
+ * Only ONE entry can exist per plugin in WP's `uninstall_plugins` option
+ * (later registrations overwrite earlier ones), so we must NOT call
+ * register_uninstall_hook when Freemius has already claimed that slot.
+ * Freemius routes through `after_uninstall` on its own callback, which
+ * gives us a hook point AND lets the SDK collect its uninstall feedback.
+ */
+if ( function_exists( 'bbfw_fs' ) ) {
+    bbfw_fs()->add_action( 'after_uninstall', 'bundlepilot_perform_uninstall_cleanup' );
+} else {
+    register_uninstall_hook( __FILE__, 'bundlepilot_perform_uninstall_cleanup' );
 }
 
 /* =========================================================================
