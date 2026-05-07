@@ -5,7 +5,8 @@
  * Handles:
  * - Adding the type to the Product Data dropdown.
  * - Loading the WC_Product subclass via the class map filter.
- * - Showing/hiding the correct WooCommerce data tabs.
+ * - Showing/hiding BundlePilot UI strictly for bundle_builder products
+ *   so other product types behave exactly as WooCommerce default.
  *
  * @package AOP_BundleBuilder
  */
@@ -32,10 +33,11 @@ class AOP_BB_Product_Type {
         // Map the type string to our WC_Product subclass.
         add_filter( 'woocommerce_product_class', array( $this, 'map_product_class' ), 10, 2 );
 
-        // Control which WooCommerce data tabs are visible.
-        add_filter( 'woocommerce_product_data_tabs', array( $this, 'configure_data_tabs' ) );
+        // Tab/field visibility is handled entirely via JS (see show_data_panels).
+        // We deliberately do NOT modify standard tab class arrays — adding a
+        // `show_if_bundle_builder` class to General/Inventory/Shipping was
+        // breaking those tabs for *other* product types in some WC versions.
 
-        // Show General and Inventory panels for our type (only on product edit screens).
         add_action( 'admin_footer-post.php', array( $this, 'show_data_panels' ) );
         add_action( 'admin_footer-post-new.php', array( $this, 'show_data_panels' ) );
 
@@ -80,42 +82,10 @@ class AOP_BB_Product_Type {
     }
 
     /**
-     * Configure which standard WooCommerce data tabs are shown for our type.
-     *
-     * We show General (for the fixed price field) and Inventory.
-     * Shipping, Linked Products, and Attributes remain available.
-     * The "Bundle Steps" tab is added by AOP_BB_Product_Data.
-     *
-     * @param array $tabs Existing data tabs.
-     * @return array Modified data tabs.
-     */
-    public function configure_data_tabs( array $tabs ): array {
-
-        // Show General tab for bundle_builder.
-        if ( isset( $tabs['general'] ) ) {
-            $tabs['general']['class'][] = 'show_if_bundle_builder';
-        }
-
-        // Show Inventory tab.
-        if ( isset( $tabs['inventory'] ) ) {
-            $tabs['inventory']['class'][] = 'show_if_bundle_builder';
-        }
-
-        // Show Shipping tab (bundle-level shipping).
-        if ( isset( $tabs['shipping'] ) ) {
-            $tabs['shipping']['class'][] = 'show_if_bundle_builder';
-        }
-
-        return $tabs;
-    }
-
-    /**
-     * Inject JS to show the pricing fields inside the General tab
-     * when "Bundle Builder" is selected in the product type dropdown.
-     *
-     * Important: This ONLY adds show rules for bundle_builder.
-     * It never touches visibility for other product types - that is
-     * handled entirely by WooCommerce core JS.
+     * Inject JS that scopes BundlePilot's UI strictly to bundle_builder
+     * products. Never touches anything when a different product type is
+     * selected, so creating Simple / Variable / External / Grouped /
+     * third-party-type products is unaffected by this plugin.
      *
      * @return void
      */
@@ -132,23 +102,38 @@ class AOP_BB_Product_Type {
         <script type="text/javascript">
         jQuery(function($) {
             /**
-             * When the product type changes, only act if the new type
-             * is bundle_builder. For every other type, do nothing -
-             * let WooCommerce core handle its own visibility rules.
+             * BundlePilot product-edit screen visibility.
+             *
+             * For bundle_builder:
+             *   - Show our "Bundle Steps" tab.
+             *   - Force-show the General tab pricing fields (WC hides them
+             *     because they have show_if_simple / show_if_external).
+             *
+             * For ALL OTHER types:
+             *   - Hide our "Bundle Steps" tab.
+             *   - Touch nothing else.
+             *
+             * This keeps Simple/Variable/External/Grouped/third-party
+             * product types completely free of BundlePilot's UI logic.
              */
-            $('select#product-type').on('change.aop_bb', function() {
-                if ( $(this).val() !== 'bundle_builder' ) {
-                    return;
+            function applyBundlePilotVisibility() {
+                var isBundle = ( $('select#product-type').val() === 'bundle_builder' );
+
+                // Our custom tab — added by AOP_BB_Product_Data with key
+                // 'bundle_builder', which WC renders as
+                // class="bundle_builder_options bundle_builder_tab ...".
+                $('.bundle_builder_options.bundle_builder_tab').toggle( isBundle );
+
+                if ( isBundle ) {
+                    $('#general_product_data .pricing').show();
                 }
-
-                // Show pricing fields inside the General tab for our type.
-                $('#general_product_data .pricing').show();
-            });
-
-            // On page load, if the product is already bundle_builder, show pricing.
-            if ( $('select#product-type').val() === 'bundle_builder' ) {
-                $('#general_product_data .pricing').show();
             }
+
+            $('select#product-type').on('change.aop_bb', applyBundlePilotVisibility);
+
+            // Run once on page load so an existing bundle's tab/pricing show
+            // immediately on edit, and a non-bundle's tab is hidden up front.
+            applyBundlePilotVisibility();
         });
         </script>
         <?php
